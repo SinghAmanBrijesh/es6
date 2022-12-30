@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_ES6</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        
+        .abc {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 450px;
+            display: flex;
+        }
+        
+        p {
+            border: 2px solid rgb(221, 23, 23);
+            padding: 1vw;
+            margin: 1vw;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="abc">
+        <p id="call1"></p>
+        <p id="call"></p>
+    </div>
+
+
+
+    <script>
+        var a = 10; // Here value of a is 10
+        var b = 8; // Here value of b is 8
+        var c = 6; // Here value of c is 6
+        {
+            let a = 2;
+            // Here value of a is 2 but only within the block
+            var b = 10;
+            // Here value of b is 10 inside and outside the block it will remain 10
+            const c = 8;
+            // Here value of c is 8 but only within the block
+            // const cannot be reassigned
+            // c=5;
+        }
+        call1 = document.getElementById("call1");
+        call1.innerHTML =
+            `
+        The value of a is : ${a}
+        <br>
+        The value of b is : ${b}
+        <br>
+        The value of c is  : ${c}       
+        `;
+
+
+
+
+        class cars {
+            constructor(aman) {
+                this.carnames = aman;
+            }
+            cardetail() {
+                return 'I have a ' + this.carnames;
+            }
+        }
+
+        class model extends cars {
+            constructor(aman, typ) {
+                super(aman);
+                this.model = typ;
+            }
+            display() {
+                return this.cardetail() + ', it is a ' + this.model;
+            }
+        }
+
+        let mycar = new model("Ford", "Mustang");
+        document.getElementById("call").innerHTML = mycar.display();
+    </script>
+</body>
+
+</html>
